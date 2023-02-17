@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- *main - print lowercase a-z
+ *main - print lowercase from z to a
  *Return: Always 0 (Success)
  */
 
