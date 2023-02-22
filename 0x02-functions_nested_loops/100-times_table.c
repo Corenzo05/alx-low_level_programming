@@ -14,7 +14,7 @@ void print_times_table(int n)
 		for (row = 0; row <= n; row++)
 		{
 			_putchar('0');
-			for (column = 0; column <= n; column++)
+			for (col = 0; col <= n; col++)
 			{
 				op = row * col;
 				_putchar(',');
@@ -28,15 +28,15 @@ void print_times_table(int n)
 				}
 				else if (op > 99)
 				{
-					_putchar('0' + (product / 100));
-					_putchar('0' + ((product / 10) % 10));
-					_putchar('0' + (product % 10));
+					_putchar('0' + (op / 100));
+					_putchar('0' + ((op / 10) % 10));
+					_putchar('0' + (op % 10));
 				}
 				else
 				{
 					_putchar(' ');
-					_putchar('0' + (product / 10));
-					_putchar('0' + (product % 10));
+					_putchar('0' + (op / 10));
+					_putchar('0' + (op % 10));
 				}
 			}
 			_putchar('\n');
