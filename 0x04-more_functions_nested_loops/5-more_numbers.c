@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_line - draws a straight line using only _putchar
- * @n: number of times
- * Where n is the number of times the character _ should be printed
+ * more_numbers - prints 10 times the numbers, from 0 to 14
+ * use _putchar three times
  */
-void print_line(int n)
+
+void more_numbers(void)
 {
 	int i, c;
 
