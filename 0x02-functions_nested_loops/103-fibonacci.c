@@ -22,7 +22,7 @@ int main(void)
 		if ((sum <= 4000000) && (sum % 2 == 0))
 			sum_ev += sum;
 	}
-	printf("%d\n", sum_ev);
+	printf("%ld\n", sum_ev);
 
 	return (0);
 }
