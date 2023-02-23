@@ -4,6 +4,13 @@
 #include <stdio.h>
 
 /**
+ * _putchar - puts character to standard output
+ * @c: character to put to standard output
+ */
+
+int _putchar(char c);
+
+/**
  * _isupper - checks for uppercase character
  * @c: The character to print
  * Return: 1 if @c uppercase, 0 if not
