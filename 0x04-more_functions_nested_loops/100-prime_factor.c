@@ -22,7 +22,7 @@ int main(void)
 		else
 			div++;
 	}
-	printf("%ld", number);
+	printf("%ld\n", number);
 
 	return (0);
 }
