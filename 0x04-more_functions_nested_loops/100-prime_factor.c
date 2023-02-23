@@ -9,6 +9,7 @@ int main(void)
 {
 	long int number, div;
 
+	div = 2;
 	number = 612852475143;
 
 	while (div < number)
