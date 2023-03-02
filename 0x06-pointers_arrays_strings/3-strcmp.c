@@ -19,10 +19,8 @@ int _strcmp(char *s1, char *s2)
 	while (*(s2 + j))
 		j++;
 
-	if (i == j)
-		return (0);
-	else if (i > j)
-		return (15);
+	if (i != j)
+		return (i - j);
 	else
-		return (-15);
+		return (0);
 }
