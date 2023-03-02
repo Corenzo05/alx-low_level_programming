@@ -13,7 +13,7 @@ char *cap_string(char *s)
 	int len = 0;
 
 	if (*(s + len) >= 'a' && *(s + len) <= 'z')
-		*(s + len) = *(s + len) - 'a' + 'A';
+		*(s + len) = *(s + len) - ' ';
 	len++;
 	while (*(s + len) != '\0')
 	{
@@ -22,7 +22,7 @@ char *cap_string(char *s)
 			if (*(s + len) == separators[i])
 			{
 				if ((*(s + (len + 1)) >= 'a') && (*(s + (len + 1)) <= 'z'))
-					*(s + (len + 1)) = *(s + (len + 1)) - 'a' + 'A';
+					*(s + (len + 1)) = *(s + (len + 1)) - ' ';
 				break;
 			}
 		}
