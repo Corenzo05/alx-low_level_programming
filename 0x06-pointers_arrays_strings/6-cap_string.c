@@ -8,25 +8,23 @@
 
 char *cap_string(char *s)
 {
-	int separators[] = {' ', 9, 10, ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
-	int i;
-	int len = 0;
+	int i = 0;
 
-	if (*(s + len) >= 'a' && *(s + len) <= 'z')
-		*(s + len) = *(s + len) - ' ';
-	len++;
-	while (*(s + len) != '\0')
+	if (s[i] >= 'a' && s[i] <= 'z')
+		s[i] = s[i] - 'a' + 'A';
+	i++;
+
+	while (s[i] != '\0')
 	{
-		for (i = 0; i < 13; i++)
-		{
-			if (*(s + len) == separators[i])
-			{
-				if ((*(s + (len + 1)) >= 'a') && (*(s + (len + 1)) <= 'z'))
-					*(s + (len + 1)) = *(s + (len + 1)) - ' ';
-				break;
-			}
-		}
-		len++;
+		if ((s[i] >= 'a' && s[i] <= 'z')
+		    && (s[i - 1] == ',' || s[i - 1] == ';' || s[i - 1] == '.' ||
+			s[i - 1] == '!' || s[i - 1] == '?' || s[i - 1] == '"' ||
+			s[i - 1] == '(' || s[i - 1] == ')' || s[i - 1] == '{' ||
+			s[i - 1] == '}' || s[i - 1] == ' ' || s[i - 1] == '\t'
+			|| s[i - 1] == '\n'))
+			s[i] = s[i] - 'a' + 'A';
+		i++;
 	}
+
 	return (s)
 }
