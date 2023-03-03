@@ -20,7 +20,7 @@ void print_number(int n)
 	}
 
 	digit = m;
-	count++;
+	count = 1;
 
 	while (digit > 9)
 	{
@@ -28,6 +28,6 @@ void print_number(int n)
 		count *= 10;
 	}
 
-	for (; count >= 9; count /= 10)
+	for (; count >= 1; count /= 10)
 		_putchar(((m / count) % 10) + '0');
 }
