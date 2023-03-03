@@ -12,18 +12,18 @@ char *rot13(char *s)
 	char crypte[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	int count = 0;
 	int i;
-	
+
 	while (*(s + count) != '\0')
 	{
 		for (i = 0; i < 52; i++)
 		{
 			if (*(s + count) == letters[i])
 			{
-				*(s + count) == crypte[i];
+				*(s + count) = crypte[i];
 				break;
 			}
 		}
-		count++;;
+		count++;
 	}
 	return (s);
 }
