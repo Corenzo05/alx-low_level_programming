@@ -8,21 +8,21 @@
  */
 void print_diagsums(int *a, int size);
 {
-	int i, idx, diago_sum1, diago_sum2;
+	int diagonal_sum_1 = 0;
+	int diagonal_sum_2 = 0;
+	int row, i;
 
-	diago_sum1 = 0;
-	diago_sum2 = 0;
-	for (i = 0; i < size; i++)
+	for (row = 0; row < size; row++)
 	{
-		idx = (i * size) + i;
-		diago_sum1 += a[idx];
+		i = (row * size) + row;
+		diagonal_sum_1 += a[i];
 	}
 
-	for (i = 1; i <= size; i++)
+	for (row = 1; row <= size; row++)
 	{
-		idx = (i * size) - i;
-		diago_sum2 += a[idx];
+		i = (row * size) - row;
+		diagonal_sum_2 += a[i];
 	}
 
-	printf("%d, %d\n", diago_sum1, diago_sum2);
+	printf("%d, %d\n", diagonal_sum_1, diagonal_sum_2);
 }
