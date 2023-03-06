@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdio.h>
 
 /**
@@ -6,8 +6,10 @@
  * @a: matrix
  * @size: size of matrix
  */
-void print_diagsums(int *a, int size);
+
+void print_diagsums(int *a, int size)
 {
+
 	int diagonal_sum_1 = 0;
 	int diagonal_sum_2 = 0;
 	int row, i;
@@ -25,4 +27,5 @@ void print_diagsums(int *a, int size);
 	}
 
 	printf("%d, %d\n", diagonal_sum_1, diagonal_sum_2);
+
 }
