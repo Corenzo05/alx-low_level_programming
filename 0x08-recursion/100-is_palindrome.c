@@ -9,7 +9,7 @@
 
 int compare(char *start, char *end)
 {
-	if (strat >= end)
+	if (start >= end)
 		return (1);
 	if (*start == *end)
 		return (compare(start + 1, end - 1));
