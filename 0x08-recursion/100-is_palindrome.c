@@ -12,7 +12,7 @@ int compare(char *start, char *end)
 	if (strat >= end)
 		return (1);
 	if (*start == *end)
-		return (compare(strat + 1, end - 1));
+		return (compare(start + 1, end - 1));
 	return (0);
 }
 
@@ -25,9 +25,9 @@ int compare(char *start, char *end)
 int _strlen(char *s)
 {
 	if (*s == '\0')
-		return (1);
+		return (0);
 	s++;
-	return (_strlen(s));
+	return (1 + _strlen(s));
 }
 
 /**
@@ -38,7 +38,8 @@ int _strlen(char *s)
 
 int is_palindrome(char *s)
 {
-	len = _strlen(s);
+	int len = _strlen(s);
+
 	if (*s == '\0')
 		return (1);
 	return (compare(s, s + (len - 1)));
