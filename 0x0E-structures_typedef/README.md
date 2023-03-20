@@ -1,1 +1,1 @@
-Define a new type struct dog
+Readme file
