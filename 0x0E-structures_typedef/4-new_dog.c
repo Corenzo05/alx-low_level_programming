@@ -1,4 +1,6 @@
 #include "dog.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * len - find length of string
