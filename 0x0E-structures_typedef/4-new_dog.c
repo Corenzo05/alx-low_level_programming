@@ -28,12 +28,8 @@ char *strcpy(char *dest, char *src)
 {
 	int i = 0;
 
-	while (i <= len(src))
-	{
+	for (i = 0; i <= len(src); i++)
 		dest[i] = src[i];
-		i++;
-	}
-	i++;
 	return (dest);
 }
 
