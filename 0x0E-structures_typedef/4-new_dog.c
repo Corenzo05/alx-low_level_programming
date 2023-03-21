@@ -19,8 +19,6 @@ int len(char *str)
 
 /*
  * strcpy - copies the string pointed to by src
- * including the terminating null byte (\0),
- * to the buffer pointed to by dest
  * @dest: copy source to this buffer
  * @src: this is the source to copy
  * Return: the pointer to dest
@@ -44,6 +42,7 @@ char *strcpy(char *dest, char *src)
  * @name: name of the dog
  * @age: age of the dog
  * @owner: owner of the dog
+ * Return: struct dog
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
