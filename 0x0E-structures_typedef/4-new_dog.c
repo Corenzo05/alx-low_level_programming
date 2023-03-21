@@ -1,30 +1,29 @@
-#include "dog.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "dog.h"
 
 /**
  * len - find length of string
  * @str: string
  * Return: length
  */
-
 int len(char *str)
 {
 	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; *(str + i); i++)
 		;
 	return (i);
 }
-
-/*
- * _strcpy - copies the string pointed to by src
+/**
+ * strcpy - copies the string pointed to by src,
+ * including the terminating null byte (\0),
+ * to the buffer pointed to by dest
  * @dest: copy source to this buffer
  * @src: this is the source to copy
- * Return: the pointer to dest
+ * Return: copy of original source
  */
-
-char *_strcpy(char *dest, char *src)
+char *strcpy(char *dest, char *src)
 {
 	int i;
 
@@ -32,15 +31,13 @@ char *_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 	return (dest);
 }
-
 /**
- * new_dog - creates a new dog
- * @name: name of the dog
- * @age: age of the dog
- * @owner: owner of the dog
- * Return: struct dog
+ * new_dog - create new instance of struct dog
+ * @name: member
+ * @age: member
+ * @owner: member
+ * Return: initialized instance of struct dog
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog1;
@@ -63,7 +60,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 			free(dog1);
 			return (NULL);
 		}
-		dog1->name = _strcpy(copy_of_name, name);
+		dog1->name = strcpy(copy_of_name, name);
 	}
 	else
 		dog1->name = NULL;
@@ -77,7 +74,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 			free(dog1);
 			return (NULL);
 		}
-		dog1->owner = _strcpy(copy_of_owner, owner);
+		dog1->owner = strcpy(copy_of_owner, owner);
 	}
 	else
 		dog1->owner = NULL;
