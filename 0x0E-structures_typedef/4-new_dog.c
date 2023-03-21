@@ -24,9 +24,9 @@ int len(char *str)
  * Return: the pointer to dest
  */
 
-char *strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
-	int i = 0;
+	int i;
 
 	for (i = 0; i <= len(src); i++)
 		dest[i] = src[i];
@@ -43,28 +43,30 @@ char *strcpy(char *dest, char *src)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dogy;
+	dog_t *dog1;
 	char *copy_of_name;
 	char *copy_of_owner;
 
-	dogy = malloc(sizeof(dog_t));
-	if (dogy == NULL)
+	dog1 = malloc(sizeof(dog_t)); /* validate if dog1 initiated correctly */
+	if (dog1 == NULL)
 		return (NULL);
 
-	dogy->age = age;
+	dog1->age = age;
 
+	/* make copies of struct members and validate, else free on error */
+	/* set values of struct members to copies of arguments or set to NULL */
 	if (name != NULL)
 	{
 		copy_of_name = malloc(len(name) + 1);
 		if (copy_of_name == NULL)
 		{
-			free(dogy);
+			free(dog1);
 			return (NULL);
 		}
-		dogy->name = strcpy(copy_of_name, name);
+		dog1->name = _strcpy(copy_of_name, name);
 	}
 	else
-		dogy->name = NULL;
+		dog1->name = NULL;
 
 	if (owner != NULL)
 	{
@@ -72,13 +74,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 		if (copy_of_owner == NULL)
 		{
 			free(copy_of_name);
-			free(dogy);
+			free(dog1);
 			return (NULL);
 		}
-		dogy->owner = strcpy(copy_of_owner, owner);
+		dog1->owner = _strcpy(copy_of_owner, owner);
 	}
 	else
-		dogy->owner = NULL;
+		dog1->owner = NULL;
 
-	return (dogy);
+	return (dog1);
 }
