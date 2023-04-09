@@ -8,20 +8,28 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned int copy;
-	
-	copy = 1;
-	while (copy <= n)
-		copy <<= 1;
+	unsigned long int copy;
+	unsigned long int m;
+	int len = 1;
 
-	copy >>= 1;
-
+	m = 1;
+	copy = n;
 	while (copy > 0)
 	{
-		if (copy & n)
+		copy >>= 1;
+		len++;
+	}
+
+	len--;
+	if (len > 0)
+		m <<= len;
+
+	while (m > 0)
+	{
+		if (m & n)
 			_putchar('1');
 		else
 			_putchar('0');
-		copy >>= 1;
+		m >>= 1;
 	}
 }
