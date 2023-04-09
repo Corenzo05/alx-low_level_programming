@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * get_int - get bit at given index
+ * get_bit - get bit at given index
  * @n: long int
  * @index: index of bit
  * Return: the bit at index, or -1 if error
