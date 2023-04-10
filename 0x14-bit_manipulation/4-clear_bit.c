@@ -12,12 +12,12 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	unsigned long int m;
 	unsigned int max;
 
-	m = 0;
+	m = 1;
 	max = sizeof(unsigned long int) * 8;
 	if (index > max)
 		return (-1);
 
-	m <<= index;
+	~m <<= index;
 	*n = m & *n;
 
 	return (1);
