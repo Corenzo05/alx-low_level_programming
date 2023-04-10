@@ -17,7 +17,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	if (index > max)
 		return (-1);
 
-	~m <<= index;
+	m = ~(m << index);
 	*n = m & *n;
 
 	return (1);
