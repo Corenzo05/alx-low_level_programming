@@ -7,7 +7,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-/* closing */
+/* closing. */
 
 #include <unistd.h>
 
