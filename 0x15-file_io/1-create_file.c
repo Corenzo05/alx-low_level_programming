@@ -16,7 +16,6 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content == NULL)
 	{
-		close(file_d);
 		return (1);
 	}
 
@@ -24,12 +23,15 @@ int create_file(const char *filename, char *text_content)
 	if (file_d == -1)
 		return (-1);
 
-	for (letters = 0; text_content[letters] != NULL; letters++)
+	for (letters = 0; text_content[letters]; letters++)
 		;
 
-	wr = write(file_d, tetx_content, letters);
+	wr = write(file_d, text_content, letters);
 	if (wr == -1)
+	{
+		close(file_d);
 		return (-1);
+	}
 
 	close(file_d);
 	return (1);
